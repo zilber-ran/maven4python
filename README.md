@@ -1,15 +1,17 @@
 
-PYTHON-BUILDER-PLUGIN
+<h1>PYTHON-BUILDER-PLUGIN</h1>
 
-Description:
+<h2>Description:</h2>
     A maven plugin to support python build (*.py execution)
     A maven plugin to add following python extensions: *.egg + *.tar.gz
     -> packaging: "python" == *.tar.gz
     -> packaging: "python-egg" == *.egg
 
-Example:
+<h2>Example:</h2>
 
 Usage for building / cleaning python package
+
+<pre>
 ...
 <build>
  <plugins>
@@ -72,6 +74,7 @@ Usage for building / cleaning python package
  </plugins>
  </build>
 ...
+</pre>
 
 Usage for deploying a python package to repository:
  ....
