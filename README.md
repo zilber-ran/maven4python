@@ -1,17 +1,17 @@
 
-<h1>PYTHON-BUILDER-PLUGIN</h1>
+# PYTHON-BUILDER-PLUGIN
 
-<h2>Description:</h2>
+## Description:
     A maven plugin to support python build (*.py execution)
     A maven plugin to add following python extensions: *.egg + *.tar.gz
     -> packaging: "python" == *.tar.gz
     -> packaging: "python-egg" == *.egg
 
-<h2>Example:</h2>
+## Example:
 
-Usage for building / cleaning python package
+ - Usage for building / cleaning python package
 
-<pre>
+
 ...
 <build>
  <plugins>
@@ -74,9 +74,9 @@ Usage for building / cleaning python package
  </plugins>
  </build>
 ...
-</pre>
 
-Usage for deploying a python package to repository:
+
+ - Usage for deploying a python package to repository:
  ....
   <groupId></groupId>
   <artifactId></artifactId>
@@ -157,12 +157,12 @@ Usage for deploying a python package to repository:
   </plugins>
   ......
 
-Motivation:
+## Motivation:
     Python builds integration with CI tools, dependency management and repositories (i.e artifactory)
 
-API Documentation: NA
+## API Documentation: NA
 
-Installation: (via pom plugin declaration)
+## Installation: (via pom plugin declaration)
 ...
 <plugin>
  <groupId>org.blubird.maven4python</groupId>
@@ -173,8 +173,8 @@ Installation: (via pom plugin declaration)
 ...
 
 
-Tests: NA
+## Tests: NA
 
-Contributors: zilber.ran@gmail.com
+## Contributors: zilber.ran@gmail.com
 
-License: ASF
+## License: ASF
