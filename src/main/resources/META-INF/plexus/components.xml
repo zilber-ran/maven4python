@@ -1,0 +1,70 @@
+<component-set>
+  <components>
+    <component>
+      <role>org.apache.maven.lifecycle.mapping.LifecycleMapping</role>
+      <role-hint>python</role-hint>
+      <implementation>
+        org.apache.maven.lifecycle.mapping.DefaultLifecycleMapping
+      </implementation>
+      <configuration>
+    <phases>
+      <process-resources>
+        org.apache.maven.plugins:maven-resources-plugin:resources
+      </process-resources>
+      <deploy>
+        org.apache.maven.plugins:maven-deploy-plugin:deploy
+      </deploy>
+    </phases>
+      </configuration>
+    </component>
+    <component>
+      <role>org.apache.maven.artifact.handler.ArtifactHandler</role>
+      <role-hint>python</role-hint>
+      <implementation>
+        org.apache.maven.artifact.handler.DefaultArtifactHandler
+      </implementation>
+      <configuration>
+        <!--the extension used by Maven in the repository-->
+        <extension>tar.gz</extension>
+        <!--the type used when specifying dependencies etc.-->
+        <type>python</type>
+        <!--the packaging used when declaring an implementation of 
+          the packaging-->
+        <packaging>python</packaging>
+      </configuration>
+    </component>
+    <component>
+      <role>org.apache.maven.lifecycle.mapping.LifecycleMapping</role>
+      <role-hint>python-egg</role-hint>
+      <implementation>
+        org.apache.maven.lifecycle.mapping.DefaultLifecycleMapping
+      </implementation>
+      <configuration>
+    <phases>
+      <process-resources>
+        org.apache.maven.plugins:maven-resources-plugin:resources
+      </process-resources>
+      <deploy>
+        org.apache.maven.plugins:maven-deploy-plugin:deploy
+      </deploy>
+    </phases>
+      </configuration>
+    </component>
+    <component>
+      <role>org.apache.maven.artifact.handler.ArtifactHandler</role>
+      <role-hint>python-egg</role-hint>
+      <implementation>
+        org.apache.maven.artifact.handler.DefaultArtifactHandler
+      </implementation>
+      <configuration>
+        <!--the extension used by Maven in the repository-->
+        <extension>egg</extension>
+        <!--the type used when specifying dependencies etc.-->
+        <type>python-egg</type>
+        <!--the packaging used when declaring an implementation of 
+          the packaging-->
+        <packaging>python-egg</packaging>
+      </configuration>
+    </component>
+  </components>
+</component-set>
