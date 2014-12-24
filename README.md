@@ -11,7 +11,7 @@
 
 Usage for building / cleaning python package
 
-<code>
+<pre>
 ...
 &lt;build&gt;
  &lt;plugins&gt;
@@ -74,9 +74,11 @@ Usage for building / cleaning python package
  &lt;/plugins&gt;
  &lt;/build&gt;
 ...
-</code>
+</pre>
 
 <h4>Usage for deploying a python package to repository:</h4>
+
+<pre>
  ....
   &lt;groupId&gt;&lt;/groupId&gt;
   &lt;artifactId&gt;&lt;/artifactId&gt;
@@ -156,6 +158,7 @@ Usage for building / cleaning python package
   &lt;/plugin&gt;
   &lt;/plugins&gt;
   ......
+  </pre>
 
 <h3>Motivation:</h3>
     Python builds integration with CI tools, dependency management and repositories (i.e artifactory)
@@ -163,6 +166,8 @@ Usage for building / cleaning python package
 <h3>API Documentation:</h3> NA
 
 <h3>Installation:</h3> (via pom plugin declaration)
+
+<pre>
 ...
 &lt;plugin&gt;
  &lt;groupId&gt;org.blubird.maven4python&lt;/groupId&gt;
@@ -171,7 +176,7 @@ Usage for building / cleaning python package
  ...
  &lt;/plugin&gt;
 ...
-
+</pre>
 
 <h3>Tests:</h3> NA
 
