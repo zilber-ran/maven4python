@@ -11,150 +11,150 @@
 
 Usage for building / cleaning python package
 
-<pre>
+<code>
 ...
-<build>
- <plugins>
- <!-- ===================================================== -->
- <!-- ======================BUILD========================== -->
- <!-- ===================================================== -->
- <plugin>
- <groupId>org.blubird.maven4python</groupId>
- <artifactId>python-builder-plugin</artifactId>
- <version>1.0</version>
- <extensions>true</extensions>
- <executions>
- <execution>
- <id>build</id>
- <phase>compile</phase>
- <configuration>
- <pythonCommand>${python.cmd}</pythonCommand>
- <setupFileLocations>
- <param>
- <setupFileLocation>
+&lt;build&gt;
+ &lt;plugins&gt;
+ &lt;!-- ===================================================== --&gt;
+ &lt;!-- ======================BUILD========================== --&gt;
+ &lt;!-- ===================================================== --&gt;
+ &lt;plugin&gt;
+ &lt;groupId&gt;org.blubird.maven4python&lt;/groupId&gt;
+ &lt;artifactId&gt;python-builder-plugin&lt;/artifactId&gt;
+ &lt;version&gt;1.0&lt;/version&gt;
+ &lt;extensions&gt;true&lt;/extensions&gt;
+ &lt;executions&gt;
+ &lt;execution&gt;
+ &lt;id&gt;build&lt;/id&gt;
+ &lt;phase&gt;compile&lt;/phase&gt;
+ &lt;configuration&gt;
+ &lt;pythonCommand&gt;${python.cmd}&lt;/pythonCommand&gt;
+ &lt;setupFileLocations&gt;
+ &lt;param&gt;
+ &lt;setupFileLocation&gt;
  ${basedir}/setup.py
- </setupFileLocation>
- <args>
- <arg>install</arg>
- <arg>--root</arg>
- <arg>/</arg>
- </args>
- </param>
- </setupFileLocations>
- </configuration>
- <goals>
- <goal>python-builder</goal>
- </goals>
- </execution>
- <!-- ===================================================== -->
- <!-- ======================CLEAN========================== -->
- <!-- ===================================================== -->
- <execution>
- <id>clean</id>
- <phase>clean</phase>
- <configuration>
- <pythonCommand>${python.cmd}</pythonCommand>
- <setupFileLocations>
- <param>
- <setupFileLocation>
+ &lt;/setupFileLocation&gt;
+ &lt;args&gt;
+ &lt;arg&gt;install&lt;/arg&gt;
+ &lt;arg&gt;--root&lt;/arg&gt;
+ &lt;arg&gt;/&lt;/arg&gt;
+ &lt;/args&gt;
+ &lt;/param&gt;
+ &lt;/setupFileLocations&gt;
+ &lt;/configuration&gt;
+ &lt;goals&gt;
+ &lt;goal&gt;python-builder&lt;/goal&gt;
+ &lt;/goals&gt;
+ &lt;/execution&gt;
+ &lt;!-- ===================================================== --&gt;
+ &lt;!-- ======================CLEAN========================== --&gt;
+ &lt;!-- ===================================================== --&gt;
+ &lt;execution&gt;
+ &lt;id&gt;clean&lt;/id&gt;
+ &lt;phase&gt;clean&lt;/phase&gt;
+ &lt;configuration&gt;
+ &lt;pythonCommand&gt;${python.cmd}&lt;/pythonCommand&gt;
+ &lt;setupFileLocations&gt;
+ &lt;param&gt;
+ &lt;setupFileLocation&gt;
  ${basedir}/setup.py
- </setupFileLocation>
- <args>
- <arg>clean</arg>
- </args>
- </param>
- </setupFileLocations>
- </configuration>
- <goals>
- <goal>python-builder</goal>
- </goals>
- </execution>
- </executions>
- </plugin>
- </plugins>
- </build>
+ &lt;/setupFileLocation&gt;
+ &lt;args&gt;
+ &lt;arg&gt;clean&lt;/arg&gt;
+ &lt;/args&gt;
+ &lt;/param&gt;
+ &lt;/setupFileLocations&gt;
+ &lt;/configuration&gt;
+ &lt;goals&gt;
+ &lt;goal&gt;python-builder&lt;/goal&gt;
+ &lt;/goals&gt;
+ &lt;/execution&gt;
+ &lt;/executions&gt;
+ &lt;/plugin&gt;
+ &lt;/plugins&gt;
+ &lt;/build&gt;
 ...
-</pre>
+</code>
 
 Usage for deploying a python package to repository:
  ....
-  <groupId></groupId>
-  <artifactId></artifactId>
-  <packaging>python</packaging>
-  <version>1.0</version>
-  <properties>
-  <package.name>${project.artifactId}.tar.gz</package.name>
-  <package.path>target/${package.name}</package.path>
-  </properties>
-  <build>
-  <plugins>
-  <!-- ===================================================== -->
-  <!-- ======================PYTHON-EXT-SETUP=============== -->
-  <!-- ===================================================== -->
-  <plugin>
-  <groupId>org.blubird.maven4python</groupId>
-  <artifactId>python-builder-plugin</artifactId>
-  <version>1.0</version>
-  <extensions>true</extensions>
-  </plugin>
+  &lt;groupId&gt;&lt;/groupId&gt;
+  &lt;artifactId&gt;&lt;/artifactId&gt;
+  &lt;packaging&gt;python&lt;/packaging&gt;
+  &lt;version&gt;1.0&lt;/version&gt;
+  &lt;properties&gt;
+  &lt;package.name&gt;${project.artifactId}.tar.gz&lt;/package.name&gt;
+  &lt;package.path&gt;target/${package.name}&lt;/package.path&gt;
+  &lt;/properties&gt;
+  &lt;build&gt;
+  &lt;plugins&gt;
+  &lt;!-- ===================================================== --&gt;
+  &lt;!-- ======================PYTHON-EXT-SETUP=============== --&gt;
+  &lt;!-- ===================================================== --&gt;
+  &lt;plugin&gt;
+  &lt;groupId&gt;org.blubird.maven4python&lt;/groupId&gt;
+  &lt;artifactId&gt;python-builder-plugin&lt;/artifactId&gt;
+  &lt;version&gt;1.0&lt;/version&gt;
+  &lt;extensions&gt;true&lt;/extensions&gt;
+  &lt;/plugin&gt;
 
-  <!-- ===================================================== -->
-  <!-- ======================INSTALL======================== -->
-  <!-- ===================================================== -->
-  <plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-install-plugin</artifactId>
-  <version>2.5.1</version>
-  <executions>
-  <execution>
-  <id>install-package</id>
-  <phase>install</phase>
-  <goals>
-  <goal>install-file</goal>
-  </goals>
-  <configuration>
-  <file>${package.path}</file>
-  <groupId>${project.groupId}</groupId>
-  <artifactId>${project.artifactId}</artifactId>
-  <version>${project.version}</version>
-  <packaging>${project.packaging}</packaging>
-  </configuration>
-  </execution>
-  </executions>
-  </plugin>
-  <!-- ===================================================== -->
-  <!-- ======================DEPLOY========================= -->
-  <!-- ===================================================== -->
-  <plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-deploy-plugin</artifactId>
-  <version>2.8.1</version>
-  <executions>
-  <execution>
-  <id>package-deploy</id>
-  <phase>deploy</phase>
-  <goals>
-  <goal>deploy-file</goal>
-  </goals>
-  </execution>
-  <execution>
-  <id>default-deploy</id>
-  <configuration>
-  <skip>true</skip>
-  </configuration>
-  </execution>
-  </executions>
-  <configuration>
-  <file>${package.path}</file>
-  <repositoryId>${repo.id}</repositoryId>
-  <url>${repo.url}</url>
-  <groupId>${project.groupId}</groupId>
-  <artifactId>${project.artifactId}</artifactId>
-  <version>${project.version}</version>
-  <packaging>${project.packaging}</packaging>
-  </configuration>
-  </plugin>
-  </plugins>
+  &lt;!-- ===================================================== --&gt;
+  &lt;!-- ======================INSTALL======================== --&gt;
+  &lt;!-- ===================================================== --&gt;
+  &lt;plugin&gt;
+  &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+  &lt;artifactId&gt;maven-install-plugin&lt;/artifactId&gt;
+  &lt;version&gt;2.5.1&lt;/version&gt;
+  &lt;executions&gt;
+  &lt;execution&gt;
+  &lt;id&gt;install-package&lt;/id&gt;
+  &lt;phase&gt;install&lt;/phase&gt;
+  &lt;goals&gt;
+  &lt;goal&gt;install-file&lt;/goal&gt;
+  &lt;/goals&gt;
+  &lt;configuration&gt;
+  &lt;file&gt;${package.path}&lt;/file&gt;
+  &lt;groupId&gt;${project.groupId}&lt;/groupId&gt;
+  &lt;artifactId&gt;${project.artifactId}&lt;/artifactId&gt;
+  &lt;version&gt;${project.version}&lt;/version&gt;
+  &lt;packaging&gt;${project.packaging}&lt;/packaging&gt;
+  &lt;/configuration&gt;
+  &lt;/execution&gt;
+  &lt;/executions&gt;
+  &lt;/plugin&gt;
+  &lt;!-- ===================================================== --&gt;
+  &lt;!-- ======================DEPLOY========================= --&gt;
+  &lt;!-- ===================================================== --&gt;
+  &lt;plugin&gt;
+  &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+  &lt;artifactId&gt;maven-deploy-plugin&lt;/artifactId&gt;
+  &lt;version&gt;2.8.1&lt;/version&gt;
+  &lt;executions&gt;
+  &lt;execution&gt;
+  &lt;id&gt;package-deploy&lt;/id&gt;
+  &lt;phase&gt;deploy&lt;/phase&gt;
+  &lt;goals&gt;
+  &lt;goal&gt;deploy-file&lt;/goal&gt;
+  &lt;/goals&gt;
+  &lt;/execution&gt;
+  &lt;execution&gt;
+  &lt;id&gt;default-deploy&lt;/id&gt;
+  &lt;configuration&gt;
+  &lt;skip&gt;true&lt;/skip&gt;
+  &lt;/configuration&gt;
+  &lt;/execution&gt;
+  &lt;/executions&gt;
+  &lt;configuration&gt;
+  &lt;file&gt;${package.path}&lt;/file&gt;
+  &lt;repositoryId&gt;${repo.id}&lt;/repositoryId&gt;
+  &lt;url&gt;${repo.url}&lt;/url&gt;
+  &lt;groupId&gt;${project.groupId}&lt;/groupId&gt;
+  &lt;artifactId&gt;${project.artifactId}&lt;/artifactId&gt;
+  &lt;version&gt;${project.version}&lt;/version&gt;
+  &lt;packaging&gt;${project.packaging}&lt;/packaging&gt;
+  &lt;/configuration&gt;
+  &lt;/plugin&gt;
+  &lt;/plugins&gt;
   ......
 
 Motivation:
