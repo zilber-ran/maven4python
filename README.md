@@ -10,72 +10,19 @@
 ### Example:
 
  #### Usage for building / cleaning python package
-
-
+<div style="bgcolor:#333333;border:2">
+<p>
 ...
-<build>
- <plugins>
- <!-- ===================================================== -->
- <!-- ======================BUILD========================== -->
- <!-- ===================================================== -->
- <plugin>
- <groupId>org.blubird.maven4python</groupId>
- <artifactId>python-builder-plugin</artifactId>
- <version>1.0</version>
- <extensions>true</extensions>
- <executions>
- <execution>
- <id>build</id>
- <phase>compile</phase>
- <configuration>
- <pythonCommand>${python.cmd}</pythonCommand>
- <setupFileLocations>
- <param>
- <setupFileLocation>
- ${basedir}/setup.py
- </setupFileLocation>
- <args>
- <arg>install</arg>
- <arg>--root</arg>
- <arg>/</arg>
- </args>
- </param>
- </setupFileLocations>
- </configuration>
- <goals>
- <goal>python-builder</goal>
- </goals>
- </execution>
- <!-- ===================================================== -->
- <!-- ======================CLEAN========================== -->
- <!-- ===================================================== -->
- <execution>
- <id>clean</id>
- <phase>clean</phase>
- <configuration>
- <pythonCommand>${python.cmd}</pythonCommand>
- <setupFileLocations>
- <param>
- <setupFileLocation>
- ${basedir}/setup.py
- </setupFileLocation>
- <args>
- <arg>clean</arg>
- </args>
- </param>
- </setupFileLocations>
- </configuration>
- <goals>
- <goal>python-builder</goal>
- </goals>
- </execution>
- </executions>
- </plugin>
- </plugins>
- </build>
+<br>
+&lt;build&gt;
+</p>
+
+<p><br>
+&lt;/build&gt;
+<br>
 ...
-
-
+</p>
+</div>
  #### Usage for deploying a python package to repository:
  ....
   <groupId></groupId>
