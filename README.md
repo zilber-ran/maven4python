@@ -9,7 +9,7 @@
 
 <h3>Example:</h3>
 
-Usage for building / cleaning python package
+<h4>Usage for building / cleaning python package</h4>
 
 <pre>
 ...
@@ -183,3 +183,4 @@ Usage for building / cleaning python package
 <h3>Contributors:</h3> zilber.ran@gmail.com
 
 <h3>License:</h3> ASF
+lt;/groupId
